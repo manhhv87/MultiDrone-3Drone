@@ -10,9 +10,11 @@ from PyQt5.QtGui import QPixmap, QColor
 from time import time
 import torch
 
+
 class VideoThread(QThread):
     change_pixmap_signal = pyqtSignal(np.ndarray)
     finding_signal = pyqtSignal(str)
+
     def __init__(self, port, direct):
         super().__init__()
         self.device = None
@@ -21,10 +23,11 @@ class VideoThread(QThread):
         self.classes = None
         self.port = port
         self.direct = direct
+
     def run(self):
         # capture from web cam
         cap = cv2.VideoCapture(self.direct)
-        self.model = torch.hub.load('ultralytics/yolov5', 'custom', path='yolov5s.pt')
+        self.model = torch.hub.load('yolov5', 'custom', path='yolov5s.pt')
         self.model.classes = [0]
         self.classes = self.model.names
         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -34,12 +37,12 @@ class VideoThread(QThread):
             if cap.get(cv2.CAP_PROP_POS_FRAMES) == cap.get(cv2.CAP_PROP_FRAME_COUNT):
                 cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
             ret, cv_img = cap.read()
-            #cv_img = cv2.flip(cv_img, 1)
+            # cv_img = cv2.flip(cv_img, 1)
             results = self.score_frame(cv_img)
-            label,cv_img = self.plot_boxes(results,cv_img)
+            label, cv_img = self.plot_boxes(results, cv_img)
             if 0 in label:
                 self.finding_signal.emit(str(self.port)+"Found!!!")
-                #print(str(self.port)+" Found!!!")
+                # print(str(self.port)+" Found!!!")
             else:
                 self.finding_signal.emit(str(self.port)+"Finding ...")
 
@@ -47,12 +50,11 @@ class VideoThread(QThread):
                 self.change_pixmap_signal.emit(cv_img)
             end_time = time()
             fps = 1 / (np.round(end_time - start_time, 3))
-            #print(f"Frames Per Second : {round(fps, 2)} FPS")
-
-
+            # print(f"Frames Per Second : {round(fps, 2)} FPS")
 
     def findFace(self, img):
-        faceCascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+        faceCascade = cv2.CascadeClassifier(
+            "haarcascade_frontalface_default.xml")
         imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         faces = faceCascade.detectMultiScale(imgGray, 1.1, 4)
 
@@ -70,7 +72,8 @@ class VideoThread(QThread):
         self.model.to(self.device)
         frame = [frame]
         results = self.model(frame)
-        labels, cord = results.xyxyn[0][:, -1].cpu().numpy(), results.xyxyn[0][:, :-1].cpu().numpy()
+        labels, cord = results.xyxyn[0][:, -
+                                        1].cpu().numpy(), results.xyxyn[0][:, :-1].cpu().numpy()
         return labels, cord
 
     def class_to_label(self, x):
@@ -93,7 +96,7 @@ class VideoThread(QThread):
         x_shape, y_shape = frame.shape[1], frame.shape[0]
         for i in range(n):
             row = cord[i]
-            #print("ddd", round(cord[i][4], 2))
+            # print("ddd", round(cord[i][4], 2))
             if row[4] >= 0.2:
                 x1, y1, x2, y2 = int(row[0] * x_shape), int(row[1] * y_shape), int(row[2] * x_shape), int(
                     row[3] * y_shape)
@@ -101,10 +104,6 @@ class VideoThread(QThread):
                 cv2.rectangle(frame, (x1, y1), (x2, y2), bgr, 2)
                 cv2.putText(frame, self.class_to_label(labels[i]) + " " + str(round(row[4], 2)), (x1, y1),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.9, bgr, 2)
-                #print(f"label ={labels}")
+                # print(f"label ={labels}")
 
-        return labels,frame
-
-
-
-
+        return labels, frame
