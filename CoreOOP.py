@@ -1,7 +1,8 @@
 import asyncio
 
 from GUI import *
-from VideoThread import *
+# from VideoThread import *
+from VideoThread_YOLOv5 import *
 from ui_functions import *
 
 NUM_DRONE_CONNECTED = 0
@@ -13,14 +14,16 @@ drone_1 = System(mavsdk_server_address="localhost", port=50060)
 drone_2 = System(mavsdk_server_address="localhost", port=50061)
 drone_3 = System(mavsdk_server_address="localhost", port=50062)
 
-direct_person       = "VidTest/Test1.mp4"
+direct_person = "VidTest/Test1.mp4"
 # direct_person       = 0
-direct_nonPerson_1  = "VidTest/NonPerson2.mp4"
-direct_nonPerson_2  = "VidTest/NonPerson2.mp4"
+direct_nonPerson_1 = "VidTest/NonPerson2.mp4"
+direct_nonPerson_2 = "VidTest/NonPerson2.mp4"
+
 
 class My_UI(QMainWindow):
     signal_found = pyqtSignal(str)
     """Khoi tao"""
+
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
@@ -36,12 +39,14 @@ class My_UI(QMainWindow):
         # Signal from Drone
         self.signal_finding = ["Finding ..."] * NUM_DRONES
         # create a grey pixmap
-        grey = QPixmap(self.ui.webcam_drone_1.geometry().width(), self.ui.webcam_drone_1.geometry().height())
+        grey = QPixmap(self.ui.webcam_drone_1.geometry().width(),
+                       self.ui.webcam_drone_1.geometry().height())
         grey.fill(QColor('darkGray'))
         # create list_position
         self.list_position = [0] * 3
         # create matrix distance
-        self.matrix_distance = [[INF, INF, INF],[INF, INF, INF], [INF, INF, INF]]
+        self.matrix_distance = [[INF, INF, INF],
+                                [INF, INF, INF], [INF, INF, INF]]
         # create list num lief packages
         self.list_num_rescue_packages = [0] * NUM_DRONES
         # set the image to the grey pixmap
@@ -55,15 +60,17 @@ class My_UI(QMainWindow):
         self.ui.webcam_drone_3.setPixmap(grey)
         self.ui.webcam_drone_3.setText("Waiting Signal from Drone3's Camera")
 
-        ## TOGGLE/BURGUER MENU
+        # TOGGLE/BURGUER MENU
         ########################################################################
-        self.ui.Btn_Toggle.clicked.connect(lambda: UIFunctions.toggleMenu(self, 250, True))
+        self.ui.Btn_Toggle.clicked.connect(
+            lambda: UIFunctions.toggleMenu(self, 250, True))
 
-        ## PAGES
+        # PAGES
         ########################################################################
 
         # PAGE 1
-        self.ui.Btn_drone_1.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_1))
+        self.ui.Btn_drone_1.clicked.connect(
+            lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_1))
         """Button"""
 
         self.ui.BtnConnect_1.clicked.connect(self.Connect_Drone_1)
@@ -89,7 +96,8 @@ class My_UI(QMainWindow):
 
         ######################################################################################
         # PAGE 2
-        self.ui.Btn_drone_2.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_2))
+        self.ui.Btn_drone_2.clicked.connect(
+            lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_2))
         """Button"""
 
         self.ui.BtnConnect_2.clicked.connect(self.Connect_Drone_2)
@@ -113,7 +121,8 @@ class My_UI(QMainWindow):
         # connect its signal finding to the label
         self.thread_1.finding_signal.connect(self.update_signal)
         # PAGE 3
-        self.ui.Btn_drone_3.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_3))
+        self.ui.Btn_drone_3.clicked.connect(
+            lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_3))
         """Button"""
 
         self.ui.BtnConnect_3.clicked.connect(self.Connect_Drone_3)
@@ -138,15 +147,16 @@ class My_UI(QMainWindow):
         self.thread_2.finding_signal.connect(self.update_signal)
 
         # PAGE Camera
-        self.ui.Btn_Camera.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_camera))
-
+        self.ui.Btn_Camera.clicked.connect(
+            lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_camera))
 
     ####################################################################################################################
+
     @pyqtSlot(str)
     def update_signal(self, signal):
         """Updates the image_label with a new opencv image"""
-        if(signal[0] == '0'):
-            if(signal[1:] == "Found!!!"):
+        if (signal[0] == '0'):
+            if (signal[1:] == "Found!!!"):
                 self.ui.finding_1.setStyleSheet("color: rgb(0,255,0);")
                 self.ui.label_drone_4.setStyleSheet("color: rgb(0,255,0);")
             else:
@@ -174,6 +184,7 @@ class My_UI(QMainWindow):
                 self.ui.label_drone_5.setStyleSheet("color: rgb(255,0,0);")
             self.ui.finding_3.setText(signal[1:])
             self.signal_finding[2] = self.ui.finding_3.text()
+
     @pyqtSlot(np.ndarray)
     def update_image(self, cv_img):
         """Updates the image_label with a new opencv image"""
@@ -200,7 +211,8 @@ class My_UI(QMainWindow):
         rgb_image = cv2.cvtColor(cv_img, cv2.COLOR_BGR2RGB)
         h, w, ch = rgb_image.shape
         bytes_per_line = ch * w
-        convert_to_Qt_format = QtGui.QImage(rgb_image.data, w, h, bytes_per_line, QtGui.QImage.Format_RGB888)
+        convert_to_Qt_format = QtGui.QImage(
+            rgb_image.data, w, h, bytes_per_line, QtGui.QImage.Format_RGB888)
         p = convert_to_Qt_format.scaled(self.ui.webcam_drone_1.geometry().width(),
                                         self.ui.webcam_drone_1.geometry().height(),
                                         Qt.KeepAspectRatio)
@@ -217,13 +229,15 @@ class My_UI(QMainWindow):
 
         self.ui.WaitingConnection_1.setText("Drone1 connected")
         self.ui.WaitingConnection_1.setStyleSheet("color: rgb(0,255,0);")
-        self.list_num_rescue_packages[0] = int(self.ui.plainText_num_packet_1.toPlainText())
+        self.list_num_rescue_packages[0] = int(
+            self.ui.plainText_num_packet_1.toPlainText())
         await asyncio.gather(self.get_alt_1(), self.get_arm_1(), self.get_batt_1(), self.get_mode_1(), self.get_gps_1(),
                              self.print_status_text_1(),
                              self.loading_signal_cam_1(),
                              self.Compute_Distance())
         return None
     # Drone 2
+
     @asyncSlot()
     async def Connect_Drone_2(self):
         global drone_2, NUM_DRONE_CONNECTED
@@ -233,7 +247,8 @@ class My_UI(QMainWindow):
 
         self.ui.WaitingConnection_2.setText("Drone2 connected")
         self.ui.WaitingConnection_2.setStyleSheet("color: rgb(0,255,0);")
-        self.list_num_rescue_packages[1] = int(self.ui.plainText_num_packet_2.toPlainText())
+        self.list_num_rescue_packages[1] = int(
+            self.ui.plainText_num_packet_2.toPlainText())
         await asyncio.gather(self.get_alt_2(), self.get_arm_2(), self.get_batt_2(), self.get_mode_2(), self.get_gps_2(),
                              self.print_status_text_2(),
                              self.loading_signal_cam_2())
@@ -249,7 +264,8 @@ class My_UI(QMainWindow):
 
         self.ui.WaitingConnection_3.setText("Drone3 connected")
         self.ui.WaitingConnection_3.setStyleSheet("color: rgb(0,255,0);")
-        self.list_num_rescue_packages[2] = int(self.ui.plainText_num_packet_3.toPlainText())
+        self.list_num_rescue_packages[2] = int(
+            self.ui.plainText_num_packet_3.toPlainText())
         await asyncio.gather(self.get_alt_3(), self.get_arm_3(), self.get_batt_3(), self.get_mode_3(),
                              self.get_gps_3(),
                              self.print_status_text_3(),
@@ -319,7 +335,6 @@ class My_UI(QMainWindow):
             Status_Text = f"Status: {status_text.type}: {status_text.text}\n"
             self.ui.plainTextEdit_1.appendPlainText(Status_Text)
 
-
     @asyncSlot()
     async def loading_signal_cam_1(self):
         await asyncio.sleep(2)
@@ -327,9 +342,10 @@ class My_UI(QMainWindow):
             for index, signal in enumerate(self.signal_finding):
                 if signal == "Found!!!" or self.flag[0] == 1:
                     distance = self.matrix_distance[index][0]
-                    if distance <0.0009 and self.flag[0] == 1:
+                    if distance < 0.0009 and self.flag[0] == 1:
                         self.list_num_rescue_packages[0] -= 1
-                        self.ui.plainText_num_packet_1.setPlainText(str(self.list_num_rescue_packages[0]))
+                        self.ui.plainText_num_packet_1.setPlainText(
+                            str(self.list_num_rescue_packages[0]))
                         self.flag[0] = 0
                     if signal != self.signal_default[0]:
                         if self.signal_default[0] == "Finding ...":
@@ -339,7 +355,8 @@ class My_UI(QMainWindow):
                                 self.flag[0] = 1
                             if index == 0:
                                 await self.Move_To_Target_1(index)
-                                if self.list_num_rescue_packages[0] != 0: self.flag[0] = 1
+                                if self.list_num_rescue_packages[0] != 0:
+                                    self.flag[0] = 1
                         else:
                             self.signal_default[0] = signal
                     break
@@ -347,6 +364,7 @@ class My_UI(QMainWindow):
                     self.signal_default[0] = signal
             await asyncio.sleep(1)
     # Drone 2
+
     @asyncSlot()
     async def get_alt_2(self):
         global NUM_DRONE_CONNECTED
@@ -423,7 +441,8 @@ class My_UI(QMainWindow):
 
                     if distance < 0.0009 and self.flag[1] == 1:
                         self.list_num_rescue_packages[1] -= 1
-                        self.ui.plainText_num_packet_2.setPlainText(str(self.list_num_rescue_packages[1]))
+                        self.ui.plainText_num_packet_2.setPlainText(
+                            str(self.list_num_rescue_packages[1]))
                         self.flag[1] = 0
 
                     if signal != self.signal_default[1]:
@@ -432,9 +451,10 @@ class My_UI(QMainWindow):
                             if distance == min(self.matrix_distance[index]) and self.list_num_rescue_packages[1] != 0 and self.list_num_rescue_packages[index] == 0:
                                 await self.Move_To_Target_2(index)
                                 self.flag[1] = 1
-                            if index == 1 :
+                            if index == 1:
                                 await self.Move_To_Target_2(index)
-                                if self.list_num_rescue_packages[1] != 0: self.flag[1] = 1
+                                if self.list_num_rescue_packages[1] != 0:
+                                    self.flag[1] = 1
                         else:
                             self.signal_default[1] = signal
                     break
@@ -518,7 +538,8 @@ class My_UI(QMainWindow):
                     distance = self.matrix_distance[index][2]
                     if distance < 0.0009 and self.flag[2] == 1:
                         self.list_num_rescue_packages[2] -= 1
-                        self.ui.plainText_num_packet_3.setPlainText(str(self.list_num_rescue_packages[2]))
+                        self.ui.plainText_num_packet_3.setPlainText(
+                            str(self.list_num_rescue_packages[2]))
                         self.flag[2] = 0
 
                     if signal != self.signal_default[2]:
@@ -527,9 +548,10 @@ class My_UI(QMainWindow):
                             if distance == min(self.matrix_distance[index]) and self.list_num_rescue_packages[2] != 0 and self.list_num_rescue_packages[index] == 0:
                                 await self.Move_To_Target_3(index)
                                 self.flag[2] = 1
-                            if index == 2 :
+                            if index == 2:
                                 await self.Move_To_Target_3(index)
-                                if self.list_num_rescue_packages[2] != 0: self.flag[2] = 1
+                                if self.list_num_rescue_packages[2] != 0:
+                                    self.flag[2] = 1
                         else:
                             self.signal_default[2] = signal
                     break
@@ -656,7 +678,7 @@ class My_UI(QMainWindow):
     @asyncSlot()
     async def Compute_Distance(self):
         while True:
-            if(NUM_DRONE_CONNECTED == 3):
+            if (NUM_DRONE_CONNECTED == 3):
                 for i in range(NUM_DRONES):
                     for j in range(i, NUM_DRONES):
                         if j == i:
@@ -680,6 +702,7 @@ class My_UI(QMainWindow):
             await asyncio.sleep(1)
     ####################################################################################################################
 
+
 class UIFunctions(My_UI):
 
     def toggleMenu(self, maxWidth, enable):
@@ -697,7 +720,8 @@ class UIFunctions(My_UI):
                 widthExtended = standard
 
             # ANIMATION
-            self.animation = QPropertyAnimation(self.ui.frame_left_menu, b"minimumWidth")
+            self.animation = QPropertyAnimation(
+                self.ui.frame_left_menu, b"minimumWidth")
             self.animation.setDuration(400)
             self.animation.setStartValue(width)
             self.animation.setEndValue(widthExtended)

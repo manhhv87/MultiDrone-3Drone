@@ -1,6 +1,7 @@
 from CoreOOP import *
 import sys
 
+
 def main():
     app = QApplication(sys.argv)
 
@@ -10,6 +11,7 @@ def main():
     window.show()
     with loop:
         sys.exit(loop.run_forever())
+
+
 if __name__ == "__main__":
     main()
-

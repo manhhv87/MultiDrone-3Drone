@@ -43,14 +43,16 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.Btn_Toggle = QtWidgets.QPushButton(self.frame_toggle)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.Btn_Toggle.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.Btn_Toggle.sizePolicy().hasHeightForWidth())
         self.Btn_Toggle.setSizePolicy(sizePolicy)
         self.Btn_Toggle.setMaximumSize(QtCore.QSize(70, 40))
         self.Btn_Toggle.setStyleSheet("color: rgb(255, 255, 255);\n"
-"border: 0px solid;")
+                                      "border: 0px solid;")
         self.Btn_Toggle.setObjectName("Btn_Toggle")
         self.verticalLayout_2.addWidget(self.Btn_Toggle)
         self.horizontalLayout.addWidget(self.frame_toggle)
@@ -70,7 +72,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.frame_left_menu = QtWidgets.QFrame(self.Content)
         self.frame_left_menu.setMaximumSize(QtCore.QSize(70, 16777215))
-        self.frame_left_menu.setStyleSheet("background-color: rgb(35, 35, 35);")
+        self.frame_left_menu.setStyleSheet(
+            "background-color: rgb(35, 35, 35);")
         self.frame_left_menu.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_left_menu.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_left_menu.setObjectName("frame_left_menu")
@@ -87,57 +90,58 @@ class Ui_MainWindow(object):
         self.Btn_drone_1 = QtWidgets.QPushButton(self.frame_top_menus)
         self.Btn_drone_1.setMinimumSize(QtCore.QSize(0, 40))
         self.Btn_drone_1.setStyleSheet("QPushButton {\n"
-"    color: rgb(255, 255, 255);\n"
-"    background-color: rgb(35, 35, 35);\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"}\n"
-"")
+                                       "    color: rgb(255, 255, 255);\n"
+                                       "    background-color: rgb(35, 35, 35);\n"
+                                       "}\n"
+                                       "\n"
+                                       "QPushButton:hover {\n"
+                                       "    background-color: rgb(85, 170, 255);\n"
+                                       "}\n"
+                                       "")
         self.Btn_drone_1.setObjectName("Btn_drone_1")
         self.verticalLayout_4.addWidget(self.Btn_drone_1)
         self.Btn_drone_2 = QtWidgets.QPushButton(self.frame_top_menus)
         self.Btn_drone_2.setMinimumSize(QtCore.QSize(0, 40))
         self.Btn_drone_2.setStyleSheet("QPushButton {\n"
-"    color: rgb(255, 255, 255);\n"
-"    background-color: rgb(35, 35, 35);\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    \n"
-"}")
+                                       "    color: rgb(255, 255, 255);\n"
+                                       "    background-color: rgb(35, 35, 35);\n"
+                                       "}\n"
+                                       "\n"
+                                       "QPushButton:hover {\n"
+                                       "    background-color: rgb(85, 170, 255);\n"
+                                       "    \n"
+                                       "}")
         self.Btn_drone_2.setObjectName("Btn_drone_2")
         self.verticalLayout_4.addWidget(self.Btn_drone_2)
         self.Btn_drone_3 = QtWidgets.QPushButton(self.frame_top_menus)
         self.Btn_drone_3.setMinimumSize(QtCore.QSize(0, 40))
         self.Btn_drone_3.setStyleSheet("QPushButton {\n"
-"    color: rgb(255, 255, 255);\n"
-"    background-color: rgb(35, 35, 35);\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    \n"
-"}")
+                                       "    color: rgb(255, 255, 255);\n"
+                                       "    background-color: rgb(35, 35, 35);\n"
+                                       "}\n"
+                                       "\n"
+                                       "QPushButton:hover {\n"
+                                       "    background-color: rgb(85, 170, 255);\n"
+                                       "    \n"
+                                       "}")
         self.Btn_drone_3.setObjectName("Btn_drone_3")
         self.verticalLayout_4.addWidget(self.Btn_drone_3)
         self.Btn_Camera = QtWidgets.QPushButton(self.frame_top_menus)
         self.Btn_Camera.setEnabled(True)
         self.Btn_Camera.setMinimumSize(QtCore.QSize(0, 40))
         self.Btn_Camera.setStyleSheet("QPushButton {\n"
-"    color: rgb(255, 255, 255);\n"
-"    background-color: rgb(35, 35, 35);\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    \n"
-"}")
+                                      "    color: rgb(255, 255, 255);\n"
+                                      "    background-color: rgb(35, 35, 35);\n"
+                                      "}\n"
+                                      "\n"
+                                      "QPushButton:hover {\n"
+                                      "    background-color: rgb(85, 170, 255);\n"
+                                      "    \n"
+                                      "}")
         self.Btn_Camera.setObjectName("Btn_Camera")
         self.verticalLayout_4.addWidget(self.Btn_Camera)
-        self.verticalLayout_3.addWidget(self.frame_top_menus, 0, QtCore.Qt.AlignTop)
+        self.verticalLayout_3.addWidget(
+            self.frame_top_menus, 0, QtCore.Qt.AlignTop)
         self.horizontalLayout_2.addWidget(self.frame_left_menu)
         self.frame_pages = QtWidgets.QFrame(self.Content)
         self.frame_pages.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -152,14 +156,14 @@ class Ui_MainWindow(object):
         self.plainTextEdit_1 = QtWidgets.QPlainTextEdit(self.page_1)
         self.plainTextEdit_1.setGeometry(QtCore.QRect(220, 50, 731, 341))
         self.plainTextEdit_1.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+                                           "color: rgb(255, 255, 255);\n"
+                                           "")
         self.plainTextEdit_1.setObjectName("plainTextEdit_1")
         self.layoutWidget = QtWidgets.QWidget(self.page_1)
         self.layoutWidget.setGeometry(QtCore.QRect(0, 100, 166, 290))
         self.layoutWidget.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+                                        "color: rgb(255, 255, 255);\n"
+                                        "")
         self.layoutWidget.setObjectName("layoutWidget")
         self.verticalLayout_14 = QtWidgets.QVBoxLayout(self.layoutWidget)
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
@@ -289,44 +293,49 @@ class Ui_MainWindow(object):
         self.layoutWidget_2 = QtWidgets.QWidget(self.page_1)
         self.layoutWidget_2.setGeometry(QtCore.QRect(220, 0, 701, 27))
         self.layoutWidget_2.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+                                          "color: rgb(255, 255, 255);\n"
+                                          "")
         self.layoutWidget_2.setObjectName("layoutWidget_2")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.layoutWidget_2)
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.DisArm_1 = QtWidgets.QPushButton(self.layoutWidget_2)
-        self.DisArm_1.setStyleSheet("alternate-background-color: rgb(45, 45, 45);")
+        self.DisArm_1.setStyleSheet(
+            "alternate-background-color: rgb(45, 45, 45);")
         self.DisArm_1.setObjectName("DisArm_1")
         self.horizontalLayout_4.addWidget(self.DisArm_1)
         self.Arm_1 = QtWidgets.QPushButton(self.layoutWidget_2)
-        self.Arm_1.setStyleSheet("alternate-background-color: rgb(45, 45, 45);")
+        self.Arm_1.setStyleSheet(
+            "alternate-background-color: rgb(45, 45, 45);")
         self.Arm_1.setObjectName("Arm_1")
         self.horizontalLayout_4.addWidget(self.Arm_1)
         self.TakeOff_1 = QtWidgets.QPushButton(self.layoutWidget_2)
-        self.TakeOff_1.setStyleSheet("alternate-background-color: rgb(45, 45, 45);")
+        self.TakeOff_1.setStyleSheet(
+            "alternate-background-color: rgb(45, 45, 45);")
         self.TakeOff_1.setObjectName("TakeOff_1")
         self.horizontalLayout_4.addWidget(self.TakeOff_1)
         self.Landing_1 = QtWidgets.QPushButton(self.layoutWidget_2)
-        self.Landing_1.setStyleSheet("alternate-background-color: rgb(45, 45, 45);")
+        self.Landing_1.setStyleSheet(
+            "alternate-background-color: rgb(45, 45, 45);")
         self.Landing_1.setObjectName("Landing_1")
         self.horizontalLayout_4.addWidget(self.Landing_1)
         self.RTL_1 = QtWidgets.QPushButton(self.layoutWidget_2)
-        self.RTL_1.setStyleSheet("alternate-background-color: rgb(45, 45, 45);")
+        self.RTL_1.setStyleSheet(
+            "alternate-background-color: rgb(45, 45, 45);")
         self.RTL_1.setObjectName("RTL_1")
         self.horizontalLayout_4.addWidget(self.RTL_1)
         self.WaitingConnection_1 = QtWidgets.QLabel(self.page_1)
         self.WaitingConnection_1.setGeometry(QtCore.QRect(20, 47, 131, 24))
         self.WaitingConnection_1.setMouseTracking(False)
         self.WaitingConnection_1.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 0, 0);")
+                                               "color: rgb(255, 0, 0);")
         self.WaitingConnection_1.setAlignment(QtCore.Qt.AlignCenter)
         self.WaitingConnection_1.setObjectName("WaitingConnection_1")
         self.BtnConnect_1 = QtWidgets.QPushButton(self.page_1)
         self.BtnConnect_1.setGeometry(QtCore.QRect(20, 0, 131, 42))
         self.BtnConnect_1.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+                                        "color: rgb(255, 255, 255);\n"
+                                        "")
         self.BtnConnect_1.setObjectName("BtnConnect_1")
         self.webcam_drone_1 = QtWidgets.QLabel(self.page_1)
         self.webcam_drone_1.setGeometry(QtCore.QRect(970, 50, 451, 341))
@@ -340,8 +349,8 @@ class Ui_MainWindow(object):
         self.finding_1 = QtWidgets.QLabel(self.page_1)
         self.finding_1.setGeometry(QtCore.QRect(990, 10, 401, 21))
         self.finding_1.setStyleSheet("\n"
-"\n"
-"color: rgb(237, 51, 59);")
+                                     "\n"
+                                     "color: rgb(237, 51, 59);")
         self.finding_1.setAlignment(QtCore.Qt.AlignCenter)
         self.finding_1.setObjectName("finding_1")
         self.label_drone_1 = QtWidgets.QLabel(self.page_1)
@@ -355,8 +364,8 @@ class Ui_MainWindow(object):
         font.setStrikeOut(False)
         self.label_drone_1.setFont(font)
         self.label_drone_1.setStyleSheet("\n"
-"\n"
-"color: rgb(237, 51, 59);")
+                                         "\n"
+                                         "color: rgb(237, 51, 59);")
         self.label_drone_1.setAlignment(QtCore.Qt.AlignCenter)
         self.label_drone_1.setObjectName("label_drone_1")
         self.label_34 = QtWidgets.QLabel(self.page_1)
@@ -369,17 +378,19 @@ class Ui_MainWindow(object):
         self.label_34.setObjectName("label_34")
         self.plainText_num_packet_1 = QtWidgets.QPlainTextEdit(self.page_1)
         self.plainText_num_packet_1.setGeometry(QtCore.QRect(70, 460, 51, 111))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.plainText_num_packet_1.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.plainText_num_packet_1.sizePolicy().hasHeightForWidth())
         self.plainText_num_packet_1.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(50)
         self.plainText_num_packet_1.setFont(font)
         self.plainText_num_packet_1.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+                                                  "color: rgb(255, 255, 255);\n"
+                                                  "")
         self.plainText_num_packet_1.setCenterOnScroll(False)
         self.plainText_num_packet_1.setObjectName("plainText_num_packet_1")
         self.Pages_Widget.addWidget(self.page_1)
@@ -388,8 +399,8 @@ class Ui_MainWindow(object):
         self.layoutWidget_3 = QtWidgets.QWidget(self.page_2)
         self.layoutWidget_3.setGeometry(QtCore.QRect(0, 100, 166, 290))
         self.layoutWidget_3.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+                                          "color: rgb(255, 255, 255);\n"
+                                          "")
         self.layoutWidget_3.setObjectName("layoutWidget_3")
         self.verticalLayout_22 = QtWidgets.QVBoxLayout(self.layoutWidget_3)
         self.verticalLayout_22.setContentsMargins(0, 0, 0, 0)
@@ -519,8 +530,8 @@ class Ui_MainWindow(object):
         self.layoutWidget_4 = QtWidgets.QWidget(self.page_2)
         self.layoutWidget_4.setGeometry(QtCore.QRect(220, 0, 701, 27))
         self.layoutWidget_4.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+                                          "color: rgb(255, 255, 255);\n"
+                                          "")
         self.layoutWidget_4.setObjectName("layoutWidget_4")
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.layoutWidget_4)
         self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
@@ -543,20 +554,20 @@ class Ui_MainWindow(object):
         self.BtnConnect_2 = QtWidgets.QPushButton(self.page_2)
         self.BtnConnect_2.setGeometry(QtCore.QRect(20, 0, 131, 42))
         self.BtnConnect_2.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+                                        "color: rgb(255, 255, 255);\n"
+                                        "")
         self.BtnConnect_2.setObjectName("BtnConnect_2")
         self.plainTextEdit_2 = QtWidgets.QPlainTextEdit(self.page_2)
         self.plainTextEdit_2.setGeometry(QtCore.QRect(220, 50, 731, 341))
         self.plainTextEdit_2.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+                                           "color: rgb(255, 255, 255);\n"
+                                           "")
         self.plainTextEdit_2.setObjectName("plainTextEdit_2")
         self.WaitingConnection_2 = QtWidgets.QLabel(self.page_2)
         self.WaitingConnection_2.setGeometry(QtCore.QRect(20, 47, 131, 24))
         self.WaitingConnection_2.setMouseTracking(False)
         self.WaitingConnection_2.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 0, 0);")
+                                               "color: rgb(255, 0, 0);")
         self.WaitingConnection_2.setAlignment(QtCore.Qt.AlignCenter)
         self.WaitingConnection_2.setObjectName("WaitingConnection_2")
         self.webcam_drone_2 = QtWidgets.QLabel(self.page_2)
@@ -571,8 +582,8 @@ class Ui_MainWindow(object):
         self.finding_2 = QtWidgets.QLabel(self.page_2)
         self.finding_2.setGeometry(QtCore.QRect(990, 10, 401, 21))
         self.finding_2.setStyleSheet("\n"
-"\n"
-"color: rgb(237, 51, 59);")
+                                     "\n"
+                                     "color: rgb(237, 51, 59);")
         self.finding_2.setAlignment(QtCore.Qt.AlignCenter)
         self.finding_2.setObjectName("finding_2")
         self.label_drone_2 = QtWidgets.QLabel(self.page_2)
@@ -586,23 +597,25 @@ class Ui_MainWindow(object):
         font.setStrikeOut(False)
         self.label_drone_2.setFont(font)
         self.label_drone_2.setStyleSheet("\n"
-"\n"
-"color: rgb(237, 51, 59);")
+                                         "\n"
+                                         "color: rgb(237, 51, 59);")
         self.label_drone_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_drone_2.setObjectName("label_drone_2")
         self.plainText_num_packet_2 = QtWidgets.QPlainTextEdit(self.page_2)
         self.plainText_num_packet_2.setGeometry(QtCore.QRect(70, 460, 51, 111))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.plainText_num_packet_2.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.plainText_num_packet_2.sizePolicy().hasHeightForWidth())
         self.plainText_num_packet_2.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(50)
         self.plainText_num_packet_2.setFont(font)
         self.plainText_num_packet_2.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+                                                  "color: rgb(255, 255, 255);\n"
+                                                  "")
         self.plainText_num_packet_2.setCenterOnScroll(False)
         self.plainText_num_packet_2.setObjectName("plainText_num_packet_2")
         self.label_35 = QtWidgets.QLabel(self.page_2)
@@ -619,8 +632,8 @@ class Ui_MainWindow(object):
         self.layoutWidget_5 = QtWidgets.QWidget(self.page_3)
         self.layoutWidget_5.setGeometry(QtCore.QRect(0, 100, 166, 290))
         self.layoutWidget_5.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+                                          "color: rgb(255, 255, 255);\n"
+                                          "")
         self.layoutWidget_5.setObjectName("layoutWidget_5")
         self.verticalLayout_35 = QtWidgets.QVBoxLayout(self.layoutWidget_5)
         self.verticalLayout_35.setContentsMargins(0, 0, 0, 0)
@@ -751,20 +764,20 @@ class Ui_MainWindow(object):
         self.WaitingConnection_3.setGeometry(QtCore.QRect(20, 47, 131, 24))
         self.WaitingConnection_3.setMouseTracking(False)
         self.WaitingConnection_3.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 0, 0);")
+                                               "color: rgb(255, 0, 0);")
         self.WaitingConnection_3.setAlignment(QtCore.Qt.AlignCenter)
         self.WaitingConnection_3.setObjectName("WaitingConnection_3")
         self.plainTextEdit_3 = QtWidgets.QPlainTextEdit(self.page_3)
         self.plainTextEdit_3.setGeometry(QtCore.QRect(220, 50, 731, 341))
         self.plainTextEdit_3.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+                                           "color: rgb(255, 255, 255);\n"
+                                           "")
         self.plainTextEdit_3.setObjectName("plainTextEdit_3")
         self.layoutWidget_6 = QtWidgets.QWidget(self.page_3)
         self.layoutWidget_6.setGeometry(QtCore.QRect(220, 0, 701, 27))
         self.layoutWidget_6.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+                                          "color: rgb(255, 255, 255);\n"
+                                          "")
         self.layoutWidget_6.setObjectName("layoutWidget_6")
         self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.layoutWidget_6)
         self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
@@ -787,8 +800,8 @@ class Ui_MainWindow(object):
         self.BtnConnect_3 = QtWidgets.QPushButton(self.page_3)
         self.BtnConnect_3.setGeometry(QtCore.QRect(20, 0, 131, 42))
         self.BtnConnect_3.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+                                        "color: rgb(255, 255, 255);\n"
+                                        "")
         self.BtnConnect_3.setObjectName("BtnConnect_3")
         self.webcam_drone_3 = QtWidgets.QLabel(self.page_3)
         self.webcam_drone_3.setGeometry(QtCore.QRect(970, 50, 451, 341))
@@ -802,8 +815,8 @@ class Ui_MainWindow(object):
         self.finding_3 = QtWidgets.QLabel(self.page_3)
         self.finding_3.setGeometry(QtCore.QRect(990, 10, 401, 21))
         self.finding_3.setStyleSheet("\n"
-"\n"
-"color: rgb(237, 51, 59);")
+                                     "\n"
+                                     "color: rgb(237, 51, 59);")
         self.finding_3.setAlignment(QtCore.Qt.AlignCenter)
         self.finding_3.setObjectName("finding_3")
         self.label_drone_3 = QtWidgets.QLabel(self.page_3)
@@ -817,23 +830,25 @@ class Ui_MainWindow(object):
         font.setStrikeOut(False)
         self.label_drone_3.setFont(font)
         self.label_drone_3.setStyleSheet("\n"
-"\n"
-"color: rgb(237, 51, 59);")
+                                         "\n"
+                                         "color: rgb(237, 51, 59);")
         self.label_drone_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_drone_3.setObjectName("label_drone_3")
         self.plainText_num_packet_3 = QtWidgets.QPlainTextEdit(self.page_3)
         self.plainText_num_packet_3.setGeometry(QtCore.QRect(70, 460, 51, 111))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.plainText_num_packet_3.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.plainText_num_packet_3.sizePolicy().hasHeightForWidth())
         self.plainText_num_packet_3.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(50)
         self.plainText_num_packet_3.setFont(font)
         self.plainText_num_packet_3.setStyleSheet("background-color: rgb(45, 45, 45);\n"
-"color: rgb(255, 255, 255);\n"
-"")
+                                                  "color: rgb(255, 255, 255);\n"
+                                                  "")
         self.plainText_num_packet_3.setCenterOnScroll(False)
         self.plainText_num_packet_3.setObjectName("plainText_num_packet_3")
         self.label_36 = QtWidgets.QLabel(self.page_3)
@@ -885,8 +900,8 @@ class Ui_MainWindow(object):
         font.setStrikeOut(False)
         self.label_drone_4.setFont(font)
         self.label_drone_4.setStyleSheet("\n"
-"\n"
-"color: rgb(237, 51, 59);")
+                                         "\n"
+                                         "color: rgb(237, 51, 59);")
         self.label_drone_4.setAlignment(QtCore.Qt.AlignCenter)
         self.label_drone_4.setObjectName("label_drone_4")
         self.label_drone_5 = QtWidgets.QLabel(self.page_camera)
@@ -900,8 +915,8 @@ class Ui_MainWindow(object):
         font.setStrikeOut(False)
         self.label_drone_5.setFont(font)
         self.label_drone_5.setStyleSheet("\n"
-"\n"
-"color: rgb(237, 51, 59);")
+                                         "\n"
+                                         "color: rgb(237, 51, 59);")
         self.label_drone_5.setAlignment(QtCore.Qt.AlignCenter)
         self.label_drone_5.setObjectName("label_drone_5")
         self.label_drone_6 = QtWidgets.QLabel(self.page_camera)
@@ -915,8 +930,8 @@ class Ui_MainWindow(object):
         font.setStrikeOut(False)
         self.label_drone_6.setFont(font)
         self.label_drone_6.setStyleSheet("\n"
-"\n"
-"color: rgb(237, 51, 59);")
+                                         "\n"
+                                         "color: rgb(237, 51, 59);")
         self.label_drone_6.setAlignment(QtCore.Qt.AlignCenter)
         self.label_drone_6.setObjectName("label_drone_6")
         self.Pages_Widget.addWidget(self.page_camera)
@@ -938,7 +953,7 @@ class Ui_MainWindow(object):
         self.Btn_drone_3.setText(_translate("MainWindow", "Drone3"))
         self.Btn_Camera.setText(_translate("MainWindow", "Camera"))
         self.plainTextEdit_1.setPlainText(_translate("MainWindow", "-- WELCOME TO CONTROLLER PROGRAM OF DRONE 1 --\n"
-""))
+                                                     ""))
         self.label_4.setText(_translate("MainWindow", "Arm Status"))
         self.ArmStatus_1.setText(_translate("MainWindow", "---------"))
         self.label_5.setText(_translate("MainWindow", "Alt (Rel)"))
@@ -964,12 +979,15 @@ class Ui_MainWindow(object):
         self.TakeOff_1.setText(_translate("MainWindow", "TakeOff"))
         self.Landing_1.setText(_translate("MainWindow", "Landing"))
         self.RTL_1.setText(_translate("MainWindow", "RTL"))
-        self.WaitingConnection_1.setText(_translate("MainWindow", "Waiting ...."))
+        self.WaitingConnection_1.setText(
+            _translate("MainWindow", "Waiting ...."))
         self.BtnConnect_1.setText(_translate("MainWindow", "Connect"))
-        self.webcam_drone_1.setText(_translate("MainWindow", "Waiting Signal from Drone1\'s Camera"))
+        self.webcam_drone_1.setText(_translate(
+            "MainWindow", "Waiting Signal from Drone1\'s Camera"))
         self.finding_1.setText(_translate("MainWindow", "Finding ..."))
         self.label_drone_1.setText(_translate("MainWindow", "Drone 1"))
-        self.label_34.setText(_translate("MainWindow", "Num rescue packages 1"))
+        self.label_34.setText(_translate(
+            "MainWindow", "Num rescue packages 1"))
         self.plainText_num_packet_1.setPlainText(_translate("MainWindow", "0"))
         self.label_14.setText(_translate("MainWindow", "Arm Status"))
         self.ArmStatus_2.setText(_translate("MainWindow", "---------"))
@@ -998,13 +1016,16 @@ class Ui_MainWindow(object):
         self.RTL_2.setText(_translate("MainWindow", "RTL"))
         self.BtnConnect_2.setText(_translate("MainWindow", "Connect"))
         self.plainTextEdit_2.setPlainText(_translate("MainWindow", "-- WELCOME TO CONTROLLER PROGRAM OF DRONE 2 --\n"
-""))
-        self.WaitingConnection_2.setText(_translate("MainWindow", "Waiting ...."))
-        self.webcam_drone_2.setText(_translate("MainWindow", "Waiting Signal from Drone2\'s Camera"))
+                                                     ""))
+        self.WaitingConnection_2.setText(
+            _translate("MainWindow", "Waiting ...."))
+        self.webcam_drone_2.setText(_translate(
+            "MainWindow", "Waiting Signal from Drone2\'s Camera"))
         self.finding_2.setText(_translate("MainWindow", "Finding ..."))
         self.label_drone_2.setText(_translate("MainWindow", "Drone 2"))
         self.plainText_num_packet_2.setPlainText(_translate("MainWindow", "0"))
-        self.label_35.setText(_translate("MainWindow", "Num rescue packages 2"))
+        self.label_35.setText(_translate(
+            "MainWindow", "Num rescue packages 2"))
         self.label_24.setText(_translate("MainWindow", "Arm Status"))
         self.ArmStatus_3.setText(_translate("MainWindow", "---------"))
         self.label_25.setText(_translate("MainWindow", "Alt (Rel)"))
@@ -1025,23 +1046,29 @@ class Ui_MainWindow(object):
         self.longitude_3.setText(_translate("MainWindow", "---------"))
         self.label_33.setText(_translate("MainWindow", "latitude"))
         self.latitude_3.setText(_translate("MainWindow", "---------"))
-        self.WaitingConnection_3.setText(_translate("MainWindow", "Waiting ...."))
+        self.WaitingConnection_3.setText(
+            _translate("MainWindow", "Waiting ...."))
         self.plainTextEdit_3.setPlainText(_translate("MainWindow", "-- WELCOME TO CONTROLLER PROGRAM OF DRONE 3 --\n"
-""))
+                                                     ""))
         self.DisArm_3.setText(_translate("MainWindow", "DisArm"))
         self.Arm_3.setText(_translate("MainWindow", "Arm"))
         self.TakeOff_3.setText(_translate("MainWindow", "TakeOff"))
         self.Landing_3.setText(_translate("MainWindow", "Landing"))
         self.RTL_3.setText(_translate("MainWindow", "RTL"))
         self.BtnConnect_3.setText(_translate("MainWindow", "Connect"))
-        self.webcam_drone_3.setText(_translate("MainWindow", "Waiting Signal from Drone3\'s Camera"))
+        self.webcam_drone_3.setText(_translate(
+            "MainWindow", "Waiting Signal from Drone3\'s Camera"))
         self.finding_3.setText(_translate("MainWindow", "Finding ..."))
         self.label_drone_3.setText(_translate("MainWindow", "Drone 3"))
         self.plainText_num_packet_3.setPlainText(_translate("MainWindow", "0"))
-        self.label_36.setText(_translate("MainWindow", "Num rescue packages 3"))
-        self.Monitor_drone_1.setText(_translate("MainWindow", "Waiting Signal from Drone1\'s Camera"))
-        self.Monitor_drone_2.setText(_translate("MainWindow", "Waiting Signal from Drone2\'s Camera"))
-        self.Monitor_drone_3.setText(_translate("MainWindow", "Waiting Signal from Drone3\'s Camera"))
+        self.label_36.setText(_translate(
+            "MainWindow", "Num rescue packages 3"))
+        self.Monitor_drone_1.setText(_translate(
+            "MainWindow", "Waiting Signal from Drone1\'s Camera"))
+        self.Monitor_drone_2.setText(_translate(
+            "MainWindow", "Waiting Signal from Drone2\'s Camera"))
+        self.Monitor_drone_3.setText(_translate(
+            "MainWindow", "Waiting Signal from Drone3\'s Camera"))
         self.label_drone_4.setText(_translate("MainWindow", "Drone 1"))
         self.label_drone_5.setText(_translate("MainWindow", "Drone 2"))
         self.label_drone_6.setText(_translate("MainWindow", "Drone 3"))

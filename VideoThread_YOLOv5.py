@@ -27,7 +27,8 @@ class VideoThread(QThread):
     def run(self):
         # capture from web cam
         cap = cv2.VideoCapture(self.direct)
-        self.model = torch.hub.load('yolov5', 'custom', path='yolov5s.pt')
+        self.model = torch.hub.load(
+            'ultralytics/yolov5', 'custom', path='ultralytics/yolov5/yolov5s.pt')
         self.model.classes = [0]
         self.classes = self.model.names
         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
