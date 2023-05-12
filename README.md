@@ -40,7 +40,7 @@ $ sudo sh cuda_11.8.0_520.61.05_linux.run
 
 During the installation process, you will be prompted to accept the license agreement, choose the installation directory, and select the components to install. Follow the prompts and only install CUDA Toolkit 11.8
 
-![resnet](https://portfolio-static-media.s3.us-east-1.amazonaws.com/media/blog/cuda%20toolkit%20installation.webp)
+![resnet](https://github.com/manhhv87/MultiDrone-3Drone/blob/main/Pictures/driver1)
 
 After the installation is complete, open the ~/.bashrc file in a text editor, such as nano, type
 
