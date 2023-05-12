@@ -210,9 +210,9 @@ $ git submodule update --recursive
 
 You need to install Qt as described below instead of using pre-built packages from say, a Linux distribution, because QGroundControl needs access to private Qt headers.
 
-1. Download and run the Qt Online [Installer](https://www.qt.io/download-open-source)
+**Download and run the Qt Online [Installer]**(https://www.qt.io/download-open-source)
 
-Set the downloaded file to executable using: 
+After set the downloaded file to executable using: 
 
 ```bash
 $ sudo chmod +x qt-unified-linux-x64-4.5.2-online.run
@@ -226,7 +226,7 @@ $ ./qt-unified-linux-x64-4.5.2-online.run
 
 If you install Qt to a non-default location you will need to modify **qgroundcontrol-start.sh** in order to run downloaded builds.
 
-2. In the installer Select Components dialog choose: 5.15.2.
+**In the installer Select Components dialog choose: 5.15.2.**
 
 Then install just the following components:
 
