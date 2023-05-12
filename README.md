@@ -303,6 +303,8 @@ Run the QGroundcontrol binary that was just built:
 $ sudo apt install libsdl2-dev
 $ sudo apt install qtlocation5-dev qtpositioning5-dev
 $ qtquickcontrols2-5-dev
+$ sudo apt-get install libqt5svg5*
+
 
 
 This is the end of tutorial. Hope you like it.
