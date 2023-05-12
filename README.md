@@ -300,4 +300,8 @@ Run the QGroundcontrol binary that was just built:
 ./staging/QGroundControl
 ```
 
+$ sudo apt install libsdl2-dev
+$ sudo apt install qtlocation5-dev qtpositioning5-dev
+
+
 This is the end of tutorial. Hope you like it.
