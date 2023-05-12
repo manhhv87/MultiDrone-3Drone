@@ -231,5 +231,6 @@ If you install Qt to a non-default location you will need to modify **qgroundcon
 Then install just the following components:
 
 
+![Qt](https://portfolio-static-media.s3.us-east-1.amazonaws.com/media/blog/cuda%20toolkit%20installation.webp)
 
 This is the end of tutorial. Hope you like it.
