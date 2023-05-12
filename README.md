@@ -207,11 +207,11 @@ $ git submodule update --recursive
 ```
 
 **Step 2: Install Qt**
+
 You need to install Qt as described below instead of using pre-built packages from say, a Linux distribution, because QGroundControl needs access to private Qt headers.
 
 1. Download and run the Qt Online [Installer](https://www.qt.io/download-open-source)
 
-Ubuntu:
 Set the downloaded file to executable using: 
 
 ```bash
