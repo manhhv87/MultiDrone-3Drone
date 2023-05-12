@@ -230,6 +230,9 @@ If you install Qt to a non-default location you will need to modify **qgroundcon
 
 Then install just the following components:
 
+- Desktop gcc 64-bit
+- Qt Charts
+- Android ARMv7 (optional, used to build Android)
 
 ![Qt](Pictures/Qt.png)
 
