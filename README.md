@@ -216,6 +216,7 @@ After set the downloaded file to executable using:
 
 ```bash
 $ sudo chmod +x qt-unified-linux-x64-4.5.2-online.run
+$ sudo apt install libxcb-xinerama0
 ```
 
 Install to default location for use with 
