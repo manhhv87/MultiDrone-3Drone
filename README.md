@@ -300,10 +300,18 @@ Run the QGroundcontrol binary that was just built:
 ./staging/QGroundControl
 ```
 
+```bash
 $ sudo apt install libsdl2-dev
 $ sudo apt install qtlocation5-dev qtpositioning5-dev
 $ qtquickcontrols2-5-dev
 $ sudo apt-get install libqt5svg5*
+$ sudo apt-get install qtmultimedia5-dev
+$ sudo apt-get install build-essential
+$ sudo apt-get install cmake qt5-default qtcreator
+$ sudo apt-get install libqt5serialport5
+$ sudo apt-get install libqt5serialport5-dev
+$ sudo apt install qtbase5-private-dev qtbase5-dev qtbase5-dev-tools libqt5texttospeech5-dev libqt5svg5-dev qtmultimedia5-dev libqt5serialbus5-dev libqt5charts5-dev libqt5serialport5-dev qtdeclarative5-private-dev qttools5-private-dev qtquickcontrols2-5-dev libssl-dev
+```
 
 
 
