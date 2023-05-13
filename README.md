@@ -256,8 +256,6 @@ $ echo -e "DEFINES += DISABLE_AIRMAP\r\n" | tee user_config.pri
 ```
 **Step 3: Building**
 
-**1. Building using Qt Creator**
-
 Launch ```Qt Creator``` and open the **qgroundcontrol.pro** project.
 
 In the **Projects** section, select **Desktop Qt 5.15.2 GCC 64bit**
@@ -265,56 +263,5 @@ In the **Projects** section, select **Desktop Qt 5.15.2 GCC 64bit**
 Build using the "hammer" (or "play") icons:
 
 ![build](https://github.com/manhhv87/MultiDrone-3Drone/blob/main/Pictures/qt_creator_build_qgc.png)
-
-**2. Build using qmake on CLI**
-
-Example commands to build a default QGC and run it afterwards:
-
-Make sure you cloned the repository and updated the submodules before, see chapter Source Code above and switch into the repository folder:
-
-```bash
-$ cd qgroundcontrol
-```
-
-Create and enter a shadow build directory:
-
-```bash
-$ mkdir build
-$ cd build
-```
-
-Configure the build using the qmake script in the root of the repository:
-
-```bash
-$ qmake ../
-```
-
-Run make to compile and link. To accelerate the process things you can use the ```-j{number of threads}``` parameter.
-
-```bash
-$ make -j12
-```
-
-Run the QGroundcontrol binary that was just built:
-
-```bash
-./staging/QGroundControl
-```
-
-```bash
-$ sudo apt install libsdl2-dev
-$ sudo apt install qtlocation5-dev qtpositioning5-dev
-$ qtquickcontrols2-5-dev
-$ sudo apt-get install libqt5svg5*
-$ sudo apt-get install qtmultimedia5-dev
-$ sudo apt-get install build-essential
-$ sudo apt-get install cmake qt5-default qtcreator
-$ sudo apt-get install libqt5serialport5
-$ sudo apt-get install libqt5serialport5-dev
-$ sudo apt install qtbase5-private-dev qtbase5-dev qtbase5-dev-tools libqt5texttospeech5-dev libqt5svg5-dev qtmultimedia5-dev libqt5serialbus5-dev libqt5charts5-dev libqt5serialport5-dev qtdeclarative5-private-dev qttools5-private-dev qtquickcontrols2-5-dev libssl-dev
-$ sudo apt-get install libqt5x11extras5-dev
-```
-
-
 
 This is the end of tutorial. Hope you like it.
