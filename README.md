@@ -311,6 +311,7 @@ $ sudo apt-get install cmake qt5-default qtcreator
 $ sudo apt-get install libqt5serialport5
 $ sudo apt-get install libqt5serialport5-dev
 $ sudo apt install qtbase5-private-dev qtbase5-dev qtbase5-dev-tools libqt5texttospeech5-dev libqt5svg5-dev qtmultimedia5-dev libqt5serialbus5-dev libqt5charts5-dev libqt5serialport5-dev qtdeclarative5-private-dev qttools5-private-dev qtquickcontrols2-5-dev libssl-dev
+$ sudo apt-get install libqt5x11extras5-dev
 ```
 
 
