@@ -115,6 +115,14 @@ Install tensorflow and Pytorch
 $ pip3 install tensorflow==2.12.0
 $ pip3 install torch torchvision torchaudio
 ```
+**Note:**
+
+```bash
+$ cd /var/lib/dpkg
+$ sudo mv info info.bak
+$ sudo mkdir info
+$ sudo apt-get upgrade
+```
 
 Check if PyTorch is using the GPU
 
